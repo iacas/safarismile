@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Smile</title>
+
+<script type="text/javascript" charset="utf-8">
+	function do_smile(event)
+	{
+		var currURL = safari.application.activeBrowserWindow.activeTab.url;	
+		var filter = "(redirect=true)|(redirect.html)|(/gp/wishlist)|(aws.amazon.com)";
+		if (currURL != null)
+		{
+			if(currURL.match(filter) == null)
+			{
+				currURL = currURL.replace('www.amazon.com', 'smile.amazon.com');
+				safari.application.activeBrowserWindow.activeTab.url=currURL;
+			}
+		}
+	}
+	
+/*
+	function inspect_smile(event)
+	{
+		var currentURL = event.url;
+	
+		if (currentURL.indexOf("amazon.com") != -1)
+		{
+			currentURL = currentURL.replace('amazon.com', 'smile.amazon.com');
+			currentURL = currentURL.replace('www.smile', 'smile');
+			safari.application.activeBrowserWindow.activeTab.url=currentURL;
+		}
+	}
+
+	function preload_smile(event)
+	{
+		alert("Hi");
+		var url = event.url;
+		var http = "http://";
+		var https = "https://";
+		var amazonurl = "www.amazon.com";
+		var smileurl = "smile.amazon.com";
+		// ignore links with these strings in them
+		var filter = "(redirect=true)|(redirect.html)|(/gp/wishlist)|(aws.amazon.com)";
+	
+   
+		if (url != null)
+		{
+			// Don't try and redirect pages that are in our filter
+			if(url.match(filter) == null)
+			{
+				// Check non-secure links
+				if(url.match(http + amazonurl) != null)
+				{
+					return
+					{
+						// redirect to amazon smile append the rest of the url
+						redirectUrl : http + smileurl + url.split(amazonurl)[1]
+					};
+				}
+				// Check secure links
+				else if (url.match(https + amazonurl) != null)
+				{
+					return
+					{
+						// redirect to amazon smile url and append the rest of the url
+						redirectUrl : https + smileurl + url.split(amazonurl)[1]
+					};
+				}
+			}
+		}
+	}
+*/
+
+	safari.application.addEventListener("navigate", do_smile, true);
+//	safari.application.addEventListener("beforeNavigate", inspect_smile, true);
+//	safari.application.addEventListener("beforeload", preload_smile, true);
+</script>
+
+</head>
+<body>
+</body>
+</html>
