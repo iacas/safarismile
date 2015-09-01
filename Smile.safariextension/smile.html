@@ -8,7 +8,7 @@
 	function do_smile(event)
 	{
 		var currURL = safari.application.activeBrowserWindow.activeTab.url;	
-		var filter = "(redirect=true)|(redirect.html)|(/gp/wishlist)|(aws.amazon.com)";
+		var filter = "(redirect=true)|(redirect.html)|(/gp/wishlist)|(aws.amazon.com)|(amazon.com/ap/signin)";
 		if (currURL != null)
 		{
 			if(currURL.match(filter) == null)
