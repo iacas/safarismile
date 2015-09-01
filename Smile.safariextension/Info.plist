@@ -5,7 +5,7 @@
 	<key>Author</key>
 	<string>Erik J. Barzeski</string>
 	<key>Builder Version</key>
-	<string>10600.8.9</string>
+	<string>9537.76.4</string>
 	<key>CFBundleDisplayName</key>
 	<string>Smile</string>
 	<key>CFBundleIdentifier</key>
@@ -13,9 +13,9 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1</string>
+	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>1.1</string>
+	<string>1</string>
 	<key>Chrome</key>
 	<dict>
 		<key>Global Page</key>
@@ -28,8 +28,6 @@
 	</dict>
 	<key>Description</key>
 	<string>Smiles for Charity @ Amazon.com</string>
-	<key>DeveloperIdentifier</key>
-	<string>V3F3ZAL4FC</string>
 	<key>ExtensionInfoDictionaryVersion</key>
 	<string>1.0</string>
 	<key>Permissions</key>
